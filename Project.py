@@ -36,9 +36,9 @@ def add_watched_movie():
             raise ValueError("Rating must be between 0 and 10")
         movie = WatchedMovie(t, g, r)
         add_to_dict(movie)
-        title_entry.delete(0, END)
-        genre_entry.delete(0, END)
-        rating_entry.delete(0, END)
+        title_entry.delete(0, END) #deletes title from box after its added
+        genre_entry.delete(0, END) #deletes genre from box after its added
+        rating_entry.delete(0, END) #deletes rating from box after its added
     except ValueError as ve:
         print("Error:", ve)
 
@@ -46,7 +46,7 @@ def add_planned_movie():
     t = planned_title.get()
     movie = PlannedMovie(t)
     add_to_dict(movie)
-    planned_title_entry.delete(0, END)
+    planned_title_entry.delete(0, END) #deletes title from box after its added
 
 def add_to_dict(movie):
     movies_dic["Title"].append(movie.title)
